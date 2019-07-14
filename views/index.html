@@ -1,0 +1,107 @@
+
+<div class="col-md-12">
+  <section class="col-md-3 col-ms-12 full-height resize">
+    <div class="panel panel-default mainpanel">
+      <div class="col-md-4 col-ms-12 set">
+        <button class="add"><span class="fa fa-plus"></span> <span class="fa fa-file"></span></button>
+      <form class="ajax" style="display:none" action="/crFile" method="get"  target="p">
+        <input type="text" name="name" placeholder="Name..."/>
+        <input type="hidden" value="{{path}}" name="dir"/>
+        <input type="hidden" class="dir" name="morePath"/>
+        <button type="submit">OK</button>
+      </form>
+      <button class="remove" onClick="document.getElementById('remove').click();"><span class="fa fa-remove"></span> <span class="fa fa-file"></span></button>
+    </div>
+      <div class="col-md-4 col-ms-12 set">
+        <button class="add" stype="submit"><span class="fa fa-plus"></span> <span class="fa fa-folder"></span></button>
+      <form class="ajax" style="display:none" action="/crFolder" method="get"  target="p">
+        <input type="text" name="name" placeholder="Name folder..."/>
+        <input type="hidden" value="{{path}}" name="dir"/>
+        <input type="hidden" class="dir" name="morePath"/>
+        <button type="submit">OK</button>
+      </form>
+      <button class="remove" onClick="document.getElementById('removeF').click();"><span class="fa fa-remove"></span> <span class="fa fa-folder"></span></button>
+    </div>
+    <div class="col-md-4 col-ms-12 set">
+      <button onClick="document.getElementById('upload').click()"><span class="fa fa-arrow-circle-up"></span></button>
+      <button class="remove add"><span class="fa fa-random"></span></button>
+      <form class="ajax" style="display:none" action="/move" method="get" target="p">
+        <textarea style="display:none" class="del" name="name"></textarea>
+          <textarea style="display:none" class="move" name="nameM"></textarea>
+        <input name="directory" placeholder="folder...."/>
+        <button type="submit">MOVE</button>
+      </form>
+    </div>
+        <div class="panel-heading">
+            <i class="fa fa-steam"></i> : <span class="pth" style="color:#d8d8d8">{{path}}</span><span class="bc"></span>
+            <div>
+            <span class="home">
+             <i class="fa fa-home"></i>
+            </span>
+                <span class="up">
+                 <i class="fa fa-level-up"></i>
+               </span></div>
+                <form class="sort" action="/store" method="get">
+                  <input type="text" name="directory" placeholder="directory manager..."/>
+                  <input type="text" name="view" placeholder="Link view..."/>
+                  <button type="submit">OK</button>
+                  {{# if msg}}
+                  <span class="error">{{msg}}</span>
+                  {{/if}}
+                </form>
+        </div>
+   <div class="panel-body">
+           <table class="linksholder">
+           </table>
+   </div>
+   <section class="full-height">
+     <div class="form">
+       <form class="col-md-12" action="/create" method="get" target="ifa">
+         <input type="hidden" class="path" name="path" value="{{path}}"/>
+         <textarea name="content" class="test col-md-12 full-height" id="pad"></textarea>
+
+         <input type="submit" id="click" style="display:none" />
+       </form>
+     </div>
+       <div style="display:none" class="col-md-6 full-height" id="markdown">
+       </div>
+   </section>
+</section>
+    <section class="row col-md-7 col-ms-12 view">
+    <div class=" full-height">
+      {{# if view}}
+        <iframe name="ifa" style="margin:auto;display:inline-block;width:100%;height:100%" src="{{view}}#here" ></iframe>
+        {{else}}
+        <iframe src="/404" name="ifa" style="margin:auto;display:inline-block;width:100%;height:100%" ></iframe>
+        {{/if}}
+      </div>
+</section>
+
+
+   </div>
+<iframe style="display:none" name="p"></iframe>
+<form class="ajax" style="display:none" action="/rmvFile" method="get" target="p">
+  <textarea type="text" class="del" name="name"></textarea>
+  <input type="submit" id="remove"/>
+</form>
+<form class="ajax" style="display:none" action="/rmvFolder" method="get"  target="p">
+  <textarea type="text" class="del" name="name"></textarea>
+  <input type="submit" id="removeF"/>
+</form>
+<form style="display:none" class="col-md-12" action="/store" method="get" target="p">
+  <textarea class="marktext" name="content" class="col-md-12 full-height" id="pad"></textarea>
+  <input type="submit" id="sbm"  />
+</form>
+
+<form style="display:none" action="/file_upload" method="POST" class="form" enctype="multipart/form-data" target="p">
+<input type="file" id="upload" name="file" size="50"  multiple />
+<input type="hidden" value="{{path}}" name="dir"/>
+<input type="hidden" class="dir" name="morePath"/>
+<input type="submit" class="accept" value="" />
+</form>
+</div>
+<aside>
+<a id="desktop" class="selected" href="javascript:;"><span class="fa fa-desktop"></span></a>
+<a id="tablet" href="javascript:;"><span class="fa fa-tablet"></span></a>
+<a id="phone" href="javascript:;"><span class="fa fa-mobile"></span></a>
+</aside>

@@ -1,0 +1,164 @@
+/* public/style.css */
+
+html, body, section, .full-height {
+    height: 100%;
+}
+.contain{
+position: relative;
+display: inline-flex;
+width: 100%;
+padding: 10px;
+}
+.form{
+  display: inline-block;
+height:300px;
+text-align: :center;
+width:100%
+}
+.form form{
+  height:100%
+}
+#pad{
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    width:100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background: rgba(216, 216, 216, 0.55);
+height: 100%;
+padding:12px
+}
+
+#markdown {
+  padding:12px
+    overflow: auto;
+    border-left: 1px solid black;
+    display: inline-block;
+width: 50%;
+height: 200px;
+float:right;
+background:#8f8f8f;
+color:#fff;
+text-align:center
+}
+.set form{
+  position : absolute;
+  background-color: #f8f8f8;
+  padding : 20px;
+  text-align : center;
+  z-index: 20;
+  box-shadow: 0 0 5px 0 #000;
+      top: 150%;
+}
+.set form input{
+  padding: 5px
+}
+.set form button{
+  background: #000;
+  color:#fff;
+  outline:0;
+  border:0;
+  padding: 5px 14px;
+  margin-top:10px
+}
+.mainpanel {
+  width: 100%;
+    display: inline-block;}
+
+.linksholder ul { list-style-type: none; }
+
+.linksholder li { font-size: 16px; line-height: 1.5em;}
+
+.linksholder li .fa { margin-right: 5px; }
+
+.linksholder a { color : black;}
+
+.linksholder .fa { color: black;}
+
+.dataTables_filter label { float: right; font-weight:normal; position: relative; top : 10px; right: 5px; }
+
+.dataTables_info { margin-top: 10px; background: ghostwhite; }
+.panel-heading{
+  display: inline-block;
+width: 100%;
+}
+.up, .home {
+  margin-right: 15px;
+   border: 1px solid #ddd;
+    cursor:pointer;
+      padding: 6px 10px;
+       text-align: center;
+       display: inline-block;
+      }
+.view{
+  display: inline-block;
+float: none;
+width: 100%;
+text-align: center;
+}
+aside{
+  position: fixed;
+  right:5px;
+  top:35%;
+  text-align:center;
+}
+aside a{
+  display:block;
+  margin-bottom: 10px;
+  font-size:24px
+}
+.selected {
+  color:#ff0000!important
+}
+.sort{
+  padding: 10px 0;
+text-align: center;
+display: inline-block;
+text-align: left;
+}
+.sort input{
+  padding:5px;
+  border:1px solid #d8d8d8;
+  background: #f8f8f8
+}
+.sort button{
+  padding: 5px 10px;
+  color:#fff;
+  background: #000;
+  margin: 5px;
+  outline:0;
+  border:0
+}
+.ui-resizable{
+  border:1px dashed #000;
+  display:inline-block;
+  margin: 10px!important;
+  overflow:hidden;
+  padding: 10px!important
+}
+.btn-primary{
+  display:none!important
+}
+.not-allow{
+    cursor: not-allowed;
+    opacity: .5
+}
+.hidden{
+  display:none
+}
+.error{
+  color:#ff0000
+}
+.set{
+  display:inline-block;
+}
+.mainpanel{
+  overflow:hidden
+}
+.panel-body{
+  width:100%
+}
